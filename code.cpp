@@ -1,90 +1,50 @@
 #include <iostream>
 using namespace std;
 int main(){
-    //Conditonal statements
-    //if -else
-    // int n=23;
-    // if(n>=0)
-    // {
-    //     cout<<"number is positive";
-
-    // } 
-    // else{
-    //     cout<<"number is negative";
-    // }
-
-// check age
-
-    // int age;
-    // cout<<"Enter a age :"<<endl;
-    // cin>>age;
-    // if(age>=18){
-    //     cout<<"eligible";
-    //         }
-    // else{
-    //     cout<<"not eligible";
-    // }
-    // return 0;
+    //Variables and data types....
+    cout<<"Priyanka Yadav!\n Tamanna\n"<<endl;
+    int age = 23;
+    char grade='b';
+    float PI=3.14f;
+    bool isSafe=false;
+    double price=3.244;
+    char tograde='a';
+    int value=grade;//ascii values store in conversions (type conversions)
+    //type casting
+    double netPrice=100.98;
+    int worthPrice=(int)netPrice;
+    cout<<worthPrice<<endl;
+    cout<<value<<endl;
+    cout<<price<<endl;
+    cout<<isSafe<<endl;
+    cout<<PI<<endl;
+    cout<<grade<<endl;
+    cout<<sizeof(age)<< endl;
+    //operators
+    int a=11,b=5;
+    cout<<"sum is "<<(a+b)<<endl;
+    cout<<"difference is "<<(a-b)<<endl;
+    cout<<"product is "<<(a*b)<<endl;
+    cout<<"Modulus "<<(a%b)<<endl;
+    cout<<"Division is\n "<<(a/b)<<endl;
+    //Realtional operators
+    int c=3 ,d=5;
+    cout<<(c<d)<<endl;
+    cout<<(c>d)<<endl;
+    cout<<(3>=3)<<endl;
+    cout<<(3<=6)<<endl;
+    cout<<(4==4)<<endl;
+    cout<<(5!=5)<<endl;
     
-
-
-    // check odd and even number
-
-    // int n;
-    // cout<<"enter a number :";
-    // cin>>n;
-    // if(n%2==0){
-    //     cout<<"numbeer is even";
-
-    // }
-    // else{
-    //     cout<<"number is odd";
-    // }
-
-
-        //if-elseif-else
-
-        // int marks;
-        // cout<<"marks is :";
-        // cin>>marks;
-        // if(marks>=90){
-        //     cout<<"A Grade";
-        // }
-        // else if(marks<90 && marks>=70){
-        //     cout<<"B Grade";
-        // }
-        // else if(marks<70 && marks >=33){
-        //     cout<<"C Grade";
-        // }
-        // else {
-        //     cout<<"F Grade";
-        // }
-
-
-        // to check uppercase and lower case
-
-        // char ch;
-        // cout<<"enter a character :";
-        // cin>>ch;
-        // if(ch>='a' && ch<='z'){
-        //     cout<<"lower case character";
-        // }
-        // else{
-        //     cout<<"upper case character";
-        // }
-        //ascii check type conversion
-        // if(ch>=97 && ch<=122){
-        //     cout<<"lowercase";
-
-        // }
-        // else{
-        //     cout<<"uppercase";
-        // }
-        
-        //ternary operaators
-        
-        int n;
-        cin>>n;
-        cout<<(n>=0?"number is positive":"number is negative");
+    //unary opertaors;
+    int x=2;
+    int z=++x;
+    int f=8;
+    int e=f++;
+    cout<<e<<" is e"<<endl;//8
+    cout<<f<<" is f"<<endl;//9
+    cout<<x<<" is x"<<endl;//3
+    cout<<z<<" is z"<<endl;//3
+    return 0;
 }
 
