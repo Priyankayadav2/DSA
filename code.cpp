@@ -1,24 +1,14 @@
 #include <iostream>
 using namespace std;
 int main(){
-    //while loop
+   //for loop
 
-
-    int n=1;
-    while(n<=4){
-        cout<<n<<" ";
-        n++;
+    // print number upto 15
+    int n=20;
+    int i;
+    for(i=1;i<=15;i++){
+        cout<<i<<" ";
     }
-    return 0;
-
-
-    // int n = 20;
-    // int i=1;
-    // while(i<=20){
-    //     cout<<i<<" ";
-    //     i++;
-    // } 
-
     
 
     return 0;
