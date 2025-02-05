@@ -21,7 +21,6 @@ int main(){
     // cout<<sumis<<"is the sum of array ";
     cout<<sumArray(arr,size)<<" is sum of array "<<endl;
     cout<<proArray(arr,size)<<" is product of array ";
-    
     return 0;
     }
     
