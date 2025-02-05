@@ -1,18 +1,21 @@
 #include <iostream>
 using namespace std;
-void changeArr(int arr[],int size){
-    cout<<"Changes in function (pass by reference) "<<endl;
+int linearSearch(int arr[],int size,int target){
+    
     for(int i =0;i<size;i++){
-        arr[i]=2*arr[i];
+        if(arr[i]==target){
+            return i;
+        }
+        
     }
+    return -1;
+
+    
 }
 
 int main(){
-    int arr[]={1,2,3};
-    changeArr(arr,3);
-    cout<<"Here is updated array pass by refernce   ";
-    for(int i =0;i<3;i++){
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
+    int arr[]={1,4,6,2,8,9,3};
+    int target =8;
+    cout<<  linearSearch(arr,7,target)<<endl;
+    return 0;
 }
