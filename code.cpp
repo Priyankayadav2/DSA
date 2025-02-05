@@ -1,20 +1,28 @@
 #include <iostream>
 using namespace std;
-void reverseArray(int arr[],int size){
-    int start=0;
-    int end=size-1;
-    while(start<end){
-        swap(arr[start],arr[end]);
-        start++;
-        end--;
+int sumArray(int arr[],int size){
+    int sum=0;
+    for(int i=0;i<size;i++){
+        sum =sum+arr[i];
     }
+    return sum;
+}
+int proArray(int arr[],int size){
+    int pro=1;
+    for(int i=0;i<size;i++){
+        pro=pro*arr[i];
+    }
+    return pro;
 }
 int main(){
-    int arr[]={2,4,1,6,8,3,2,9};
-    int size=8;//7
-    reverseArray(arr,size);
-    for(int i =0;i<size;i++){
-        cout<<arr[i]<<" ";
+    int arr[]={2,3,4,5};
+    int size=4;
+    // int sumis=sumArray(arr,size);
+    // cout<<sumis<<"is the sum of array ";
+    cout<<sumArray(arr,size)<<" is sum of array "<<endl;
+    cout<<proArray(arr,size)<<" is product of array ";
+    
+    return 0;
     }
-    }
+    
 
