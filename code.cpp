@@ -4,19 +4,21 @@ using namespace std;
 
 
 int main(){
-    int n=5;
-    int arr[5]={1,2,3,4,5};
+    int n=7;
+    int arr[7]={3,-4,5,4,-1,7,-8};
     int maxSum=INT32_MIN;
+    int curSum=0;
 
-    for(int start=0;start<n;start++){
-        int curSum=0;
-        for(int end=start;end<n;end++){
-            curSum+=arr[end];
-            maxSum=max(curSum,maxSum);
-            }
+
+    for(int val:arr){
+        curSum+=val;
+        maxSum=max(curSum,maxSum);
+        if(curSum<0)
+        {
+            curSum=0;
         }
-        cout<<"Max subarray Sum = "<<maxSum<<endl;
-    
+    }
+    cout << "Maximum Subarray Sum: " << maxSum << endl; 
     return 0;
 }
     
