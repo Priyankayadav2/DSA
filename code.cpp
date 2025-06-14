@@ -1,25 +1,39 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
+double myPow(double x, int n) {
+    if (n == 0) return 1.0;
+    if (x == 0) return 0.0;
+    if (x == 1) return 1.0;
+    if (x == -1 && n % 2 == 0) return 1.0;
+    if (x == -1 && n % 2 != 0) return -1.0;
 
-int main(){
-    int n=7;
-    int arr[7]={3,-4,5,4,-1,7,-8};
-    int maxSum=INT32_MIN;
-    int curSum=0;
-
-
-    for(int val:arr){
-        curSum+=val;
-        maxSum=max(curSum,maxSum);
-        if(curSum<0)
-        {
-            curSum=0;
-        }
+    long long binForm = n;
+    if (n < 0) {
+        x = 1 / x;
+        binForm = -binForm;
     }
-    cout << "Maximum Subarray Sum: " << maxSum << endl; 
+
+    double ans = 1.0;
+    while (binForm > 0) {
+        if (binForm % 2 == 1) {
+            ans *= x;
+        }
+        x *= x;
+        binForm /= 2;
+    }
+    return ans;
+}
+
+int main() {
+    double x;
+    int n;
+
+    cout << "Enter base (x): ";
+    cin >> x;
+    cout << "Enter exponent (n): ";
+    cin >> n;
+
+    cout << "Result: " << myPow(x, n) << endl;
     return 0;
 }
-    
-
