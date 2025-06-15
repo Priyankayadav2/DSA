@@ -1,27 +1,41 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>  // for min and max functions
+
 
 using namespace std;
+//brute force approach
 
-int maxProfit(vector<int>& prices) {
-    if (prices.empty()) return 0;
+// int maxWater(vector<int>& height) {
+//     int maxWater=0;
+//     for (int i=0;i<height.size();i++){
+//         for( int j=i+1;j<height.size();j++){
+//             int  width=j-i;
+//             int ht=min(height[i],height[j]);
+//             int curWater=width*ht;
+//             maxWater=max(maxWater,curWater);
+//         }
+//     }
+//     return maxWater;
+// }
 
-    int maxProfit = 0;
-    int bestBuy = prices[0];
 
-    for (int i = 1; i < prices.size(); i++) {
-        if (prices[i] > bestBuy) {
-            maxProfit = max(maxProfit, prices[i] - bestBuy);
-        }
-        bestBuy = min(bestBuy, prices[i]);
+//optimal approach of two pointer 
+int maxWater (vector <int> & height){
+    int lp=0,rp=height.size()-1,maxWater=0;
+    while(lp<rp){
+        int w=rp-lp;
+        int ht=min(height[lp],height[rp]);
+        int curWater=w*ht;
+        maxWater=max(maxWater,curWater);
+
+        height[lp]<height[rp]?lp++:rp--;
     }
-    return maxProfit;
+    return maxWater;
 }
 
 int main() {
-    vector<int> prices = {7, 1, 5, 3, 6, 4};
+    vector<int> height ={1,8,6,2,5,4,8,3,7};
 
-    cout << "MaxProfit: " << maxProfit(prices) << endl;
+    cout << "MaxWater is : " << maxWater(height) << endl;
     return 0; 
 }
