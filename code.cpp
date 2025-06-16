@@ -1,41 +1,25 @@
 #include <iostream>
 #include <vector>
-
-
 using namespace std;
 //brute force approach
-
-// int maxWater(vector<int>& height) {
-//     int maxWater=0;
-//     for (int i=0;i<height.size();i++){
-//         for( int j=i+1;j<height.size();j++){
-//             int  width=j-i;
-//             int ht=min(height[i],height[j]);
-//             int curWater=width*ht;
-//             maxWater=max(maxWater,curWater);
-//         }
-//     }
-//     return maxWater;
-// }
-
-
-//optimal approach of two pointer 
-int maxWater (vector <int> & height){
-    int lp=0,rp=height.size()-1,maxWater=0;
-    while(lp<rp){
-        int w=rp-lp;
-        int ht=min(height[lp],height[rp]);
-        int curWater=w*ht;
-        maxWater=max(maxWater,curWater);
-
-        height[lp]<height[rp]?lp++:rp--;
+vector<int> productExceptSelf(vector<int>&nums) {
+    int n =nums.size();
+    vector<int>ans(n,1);
+    for(int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            if(i!=j){
+                ans[i]*=nums[j];
+            }
+        }
     }
-    return maxWater;
+    return ans;
 }
 
 int main() {
-    vector<int> height ={1,8,6,2,5,4,8,3,7};
-
-    cout << "MaxWater is : " << maxWater(height) << endl;
-    return 0; 
+    vector<int>nums={1,2,3,4};
+    vector<int> result = productExceptSelf(nums);
+    cout << "Answer is: ";
+    for (int i = 0; i < result.size(); i++) {
+    cout << result[i] << " ";
+}
 }
